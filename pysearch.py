@@ -64,8 +64,6 @@ if __name__ == "__main__":
     search_path = search_path.strip()
     query_string = input('Query to search in files: ')
     query_string = query_string.strip()
-    if search_path == '':
-        main(base_dir=None, user_query=query_string)
-    else:
-        main(base_dir=search_path, user_query=query_string)
+    base_dir = None if search_path is '' else search_path
+    main(base_dir=search_path, user_query=query_string)
 
